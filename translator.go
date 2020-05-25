@@ -73,6 +73,7 @@ func (t *DefaultRSSTranslator) translateFeedItem(rssItem *rss.Item) (item *Item)
 	item.DublinCoreExt = rssItem.DublinCoreExt
 	item.ITunesExt = rssItem.ITunesExt
 	item.Extensions = rssItem.Extensions
+	item.Tags = t.translateItemTags(rssItem)
 	return
 }
 
@@ -273,6 +274,10 @@ func (t *DefaultRSSTranslator) translateItemDescription(rssItem *rss.Item) (desc
 
 func (t *DefaultRSSTranslator) translateItemContent(rssItem *rss.Item) (content string) {
 	return rssItem.Content
+}
+
+func (t *DefaultRSSTranslator) translateItemTags(rssItem *rss.Item) (content string) {
+	return rssItem.Tags
 }
 
 func (t *DefaultRSSTranslator) translateItemLink(rssItem *rss.Item) (link string) {

@@ -50,6 +50,7 @@ type Item struct {
 	Content       string                   `json:"content,omitempty"`
 	Author        string                   `json:"author,omitempty"`
 	Categories    []*Category              `json:"categories,omitempty"`
+	Tags          string                   `json:"tags,omitempty"`
 	Comments      string                   `json:"comments,omitempty"`
 	Enclosure     *Enclosure               `json:"enclosure,omitempty"`
 	GUID          *GUID                    `json:"guid,omitempty"`
