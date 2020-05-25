@@ -414,6 +414,12 @@ func (rp *Parser) parseItem(p *xpp.XMLPullParser) (item *Item, err error) {
 					return nil, err
 				}
 				categories = append(categories, result)
+			} else if name == "tags" {
+				result, err := shared.ParseText(p)
+				if err != nil {
+					return nil, err
+				}
+				item.Tags = result
 			} else {
 				// Skip any elements not part of the item spec
 				p.Skip()
